@@ -16,3 +16,17 @@ img {
   display: block;
   max-width: 100%;
 }
+.timer {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.field {
+  border: solid 1px black;
+  padding: 5px;
+  border-radius: 20px;
+}
+button {
+  padding: 5px;
+  border-radius: 20px;
+}
