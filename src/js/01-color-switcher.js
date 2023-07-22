@@ -8,11 +8,11 @@ function getRandomHexColor() {
 
 startBtn.addEventListener('click', () => {
   changeColor = setInterval(() => {
-    let bodyColor = getRandomHexColor();
-    document.body.style.backgroundColor = bodyColor;
+    document.body.style.backgroundColor = `${getRandomHexColor()}`;
   }, 1000);
   startBtn.disabled = true;
 });
+
 stopBtn.addEventListener('click', () => {
   clearInterval(changeColor);
   startBtn.disabled = false;
