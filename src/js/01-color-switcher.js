@@ -5,7 +5,7 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
+function changeColor();
 startBtn.addEventListener('click', () => {
   changeColor = setInterval(() => {
     let bodyColor = getRandomHexColor();
