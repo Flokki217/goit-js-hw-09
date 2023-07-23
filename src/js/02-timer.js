@@ -60,10 +60,10 @@ function setCurrentTime(futureTime) {
 }
 
 function timekeeper(value) {
-  daysEl.textContent = `0${value.days}`;
-  hoursEl.textContent = value.hours;
-  minutesEl.textContent = value.minutes;
-  secondsEl.textContent = value.seconds;
+  daysEl.textContent = value.days.toString().padStart(2, '0');
+  hoursEl.textContent = value.hours.toString().padStart(2, '0');
+  minutesEl.textContent = value.minutes.toString().padStart(2, '0');
+  secondsEl.textContent = value.seconds.toString().padStart(2, '0');
 }
 
 function isTimerOver({ days, hours, minutes, seconds }) {

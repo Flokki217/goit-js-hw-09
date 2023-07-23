@@ -23,15 +23,19 @@ formEl.addEventListener('submit', evt => {
   const stepVal = Number(stepEl.value);
   const amountVal = Number(amountEl.value);
 
-  for (let i = 1; i <= amountVal; i += 1) {
-    createPromise(i, delayVal)
-      .then(({ position, delay }) => {
-        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-      })
-      .catch(({ position, delay }) => {
-        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-      });
-    delayVal += stepVal;
-    formEl.reset();
+  if (delayVal === 0 || stepVal === 0 || amountVal === 0) {
+    Notify.failure('❌Count cannot be zero!');
+  } else {
+    for (let i = 1; i <= amountVal; i += 1) {
+      createPromise(i, delayVal)
+        .then(({ position, delay }) => {
+          Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        })
+        .catch(({ position, delay }) => {
+          Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+        });
+      delayVal += stepVal;
+      formEl.reset();
+    }
   }
 });
